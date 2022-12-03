@@ -25,7 +25,12 @@ while True:
 		badge.show_qr_code("https://fp3rrylt2a.execute-api.us-east-2.amazonaws.com/")
 	else:
 		badge.show_picture(image)"""
-	stat,ret=badge.expresslink.connected
+	
+	try:
+		stat,ret=badge.expresslink.connected
+	except:
+		stat=None
+		ret=None
 	if stat:
 		badge.show_picture(image)
 	else:
