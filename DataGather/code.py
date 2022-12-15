@@ -1,6 +1,6 @@
 import time
 import json
-import uuid
+#import uuid
 from demo_badge import Badge
 
 badge=Badge()
@@ -27,9 +27,9 @@ while True:
             badge.leds[t]=(0,100,0)
         else:
             badge.leds[t]=(0,0,0)
-    if time.monotonic() > prev_time+30:
+    if time.monotonic() > prev_time+10:
         data={
-        "id":str(uuid.uuid4()),
+ #       "id":str(uuid.uuid4()),
         "ts":time.monotonic(),
         "Celcius":badge.temperature_humidity.temperature,
         "Humidity":badge.temperature_humidity.relative_humidity,
